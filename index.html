@@ -2,35 +2,45 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>AP Precalculus Formula Study Site</title>
+<title>AP Pre-Calculus Formula Collection</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 
 <script>
 window.MathJax = {
-  tex: { inlineMath: [['\\(','\\)'], ['$', '$']] }
+  tex: { inlineMath: [['\\(','\\)'], ['$', '$']] },
+  svg: { fontCache: 'global' }
 };
 </script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 
 <style>
-.math-card {
+body {
+  font-family: system-ui, sans-serif;
+}
+
+.card {
   background: white;
-  padding: 14px;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   transition: 0.2s;
 }
-.math-card:hover {
-  transform: translateY(-2px);
+
+.card:hover {
+  transform: scale(1.02);
 }
+
 .title {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
+  color: #334155;
 }
-.eq {
-  font-size: 18px;
+
+.formula {
+  font-size: 22px;
+  text-align: center;
 }
 </style>
 
@@ -39,162 +49,117 @@ window.MathJax = {
 <body class="bg-slate-100 text-slate-800">
 
 <header class="text-center p-6 text-3xl font-bold">
-AP Precalculus Formula Study Site
+AP Pre-Calculus Formula Collection
 </header>
 
-<!-- NAV -->
 <nav class="flex flex-wrap justify-center gap-3 mb-6">
-<button onclick="show('home')" class="bg-white px-4 py-2 rounded shadow">Home</button>
 <button onclick="show('functions')" class="bg-white px-4 py-2 rounded shadow">Functions</button>
-<button onclick="show('trig')" class="bg-white px-4 py-2 rounded shadow">Trig</button>
+<button onclick="show('trig')" class="bg-white px-4 py-2 rounded shadow">Trigonometry</button>
 <button onclick="show('algebra')" class="bg-white px-4 py-2 rounded shadow">Algebra</button>
 <button onclick="show('sequences')" class="bg-white px-4 py-2 rounded shadow">Sequences</button>
 <button onclick="show('logs')" class="bg-white px-4 py-2 rounded shadow">Logs</button>
 </nav>
 
-<!-- HOME -->
-<section id="home" class="text-center p-6">
-<h2 class="text-xl font-semibold">AP Precalculus Formula Guide</h2>
-<p class="mt-2">Clean, structured formulas for fast studying.</p>
-</section>
-
 <!-- FUNCTIONS -->
-<section id="functions" class="hidden max-w-5xl mx-auto p-4 grid md:grid-cols-2 gap-4">
+<section id="functions" class="max-w-6xl mx-auto p-4 grid md:grid-cols-2 gap-5">
 
-<div class="math-card">
-<div class="title">Function Transformation</div>
-<div class="eq">\( y = a f(b(x-h)) + k \)</div>
-</div>
+<div class="card"><div class="title">Function Transformation</div><div class="formula">\( y=a f(b(x-h))+k \)</div></div>
 
-<div class="math-card">
-<div class="title">Composition</div>
-<div class="eq">\( (f \circ g)(x)=f(g(x)) \)</div>
-</div>
+<div class="card"><div class="title">Composition</div><div class="formula">\( (f\circ g)(x)=f(g(x)) \)</div></div>
 
-<div class="math-card">
-<div class="title">Inverse Function</div>
-<div class="eq">\( f^{-1}(f(x))=x \)</div>
-</div>
+<div class="card"><div class="title">Inverse Function</div><div class="formula">\( f^{-1}(x) \)</div></div>
 
-<div class="math-card">
-<div class="title">Average Rate of Change</div>
-<div class="eq">\( \frac{f(b)-f(a)}{b-a} \)</div>
-</div>
+<div class="card"><div class="title">Average Rate of Change</div><div class="formula">\( \frac{f(b)-f(a)}{b-a} \)</div></div>
 
-<div class="math-card">
-<div class="title">Even Function</div>
-<div class="eq">\( f(-x)=f(x) \)</div>
-</div>
+<div class="card"><div class="title">Even Function</div><div class="formula">\( f(-x)=f(x) \)</div></div>
 
-<div class="math-card">
-<div class="title">Odd Function</div>
-<div class="eq">\( f(-x)=-f(x) \)</div>
-</div>
+<div class="card"><div class="title">Odd Function</div><div class="formula">\( f(-x)=-f(x) \)</div></div>
 
-<div class="math-card">
-<div class="title">Exponential Growth</div>
-<div class="eq">\( f(x)=ab^x \)</div>
-</div>
+<div class="card"><div class="title">Exponential Growth</div><div class="formula">\( f(x)=ab^x \)</div></div>
 
-<div class="math-card">
-<div class="title">Exponential Decay</div>
-<div class="eq">\( f(x)=ab^x,\;0&lt;b&lt;1 \)</div>
-</div>
+<div class="card"><div class="title">Exponential Decay</div><div class="formula">\( f(x)=ab^x \text{ for } 0&lt;b&lt;1 \)</div></div>
+
+<div class="card"><div class="title">Piecewise Function</div><div class="formula">Rule changes by interval</div></div>
+
+<div class="card"><div class="title">Domain & Range</div><div class="formula">Domain: inputs; Range: outputs</div></div>
 
 </section>
 
 <!-- TRIG -->
-<section id="trig" class="hidden max-w-5xl mx-auto p-4 grid md:grid-cols-2 gap-4">
+<section id="trig" class="hidden max-w-6xl mx-auto p-4 grid md:grid-cols-2 gap-5">
 
-<div class="math-card">
-<div class="title">Pythagorean Identity</div>
-<div class="eq">\( \sin^2x+\cos^2x=1 \)</div>
-</div>
+<div class="card"><div class="title">Unit Circle Definition</div><div class="formula">\( (\cos\theta,\sin\theta) \)</div></div>
 
-<div class="math-card">
-<div class="title">Tangent Identity</div>
-<div class="eq">\( \tan x=\frac{\sin x}{\cos x} \)</div>
-</div>
+<div class="card"><div class="title">Pythagorean Identity</div><div class="formula">\( \sin^2x+\cos^2x=1 \)</div></div>
 
-<div class="math-card">
-<div class="title">Law of Sines</div>
-<div class="eq">\( \frac{a}{\sin A}=\frac{b}{\sin B}=\frac{c}{\sin C} \)</div>
-</div>
+<div class="card"><div class="title">Tangent Identity</div><div class="formula">\( \tan x=\frac{\sin x}{\cos x} \)</div></div>
 
-<div class="math-card">
-<div class="title">Law of Cosines</div>
-<div class="eq">\( c^2=a^2+b^2-2ab\cos C \)</div>
-</div>
+<div class="card"><div class="title">Secant Identity</div><div class="formula">\( 1+\tan^2x=\sec^2x \)</div></div>
 
-<div class="math-card">
-<div class="title">Arc Length</div>
-<div class="eq">\( s=r\theta \)</div>
-</div>
+<div class="card"><div class="title">Cosecant Identity</div><div class="formula">\( 1+\cot^2x=\csc^2x \)</div></div>
+
+<div class="card"><div class="title">SOHCAHTOA</div><div class="formula">\( \sin=\frac{opp}{hyp},\cos=\frac{adj}{hyp},\tan=\frac{opp}{adj} \)</div></div>
+
+<div class="card"><div class="title">Law of Sines</div><div class="formula">\( \frac{a}{\sin A}=\frac{b}{\sin B}=\frac{c}{\sin C} \)</div></div>
+
+<div class="card"><div class="title">Law of Cosines</div><div class="formula">\( c^2=a^2+b^2-2ab\cos C \)</div></div>
+
+<div class="card"><div class="title">Arc Length</div><div class="formula">\( s=r\theta \)</div></div>
+
+<div class="card"><div class="title">Radian Conversion</div><div class="formula">\( \pi \text{ rad}=180^\circ \)</div></div>
 
 </section>
 
 <!-- ALGEBRA -->
-<section id="algebra" class="hidden max-w-5xl mx-auto p-4 grid md:grid-cols-2 gap-4">
+<section id="algebra" class="hidden max-w-6xl mx-auto p-4 grid md:grid-cols-2 gap-5">
 
-<div class="math-card">
-<div class="title">Quadratic Formula</div>
-<div class="eq">\( x=\frac{-b\pm\sqrt{b^2-4ac}}{2a} \)</div>
-</div>
+<div class="card"><div class="title">Quadratic Formula</div><div class="formula">\( x=\frac{-b\pm\sqrt{b^2-4ac}}{2a} \)</div></div>
 
-<div class="math-card">
-<div class="title">Slope</div>
-<div class="eq">\( m=\frac{y_2-y_1}{x_2-x_1} \)</div>
-</div>
+<div class="card"><div class="title">Discriminant</div><div class="formula">\( b^2-4ac \)</div></div>
 
-<div class="math-card">
-<div class="title">Distance Formula</div>
-<div class="eq">\( d=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2} \)</div>
-</div>
+<div class="card"><div class="title">Slope</div><div class="formula">\( \frac{y_2-y_1}{x_2-x_1} \)</div></div>
 
-<div class="math-card">
-<div class="title">Midpoint</div>
-<div class="eq">\( \left(\frac{x_1+x_2}{2},\frac{y_1+y_2}{2}\right) \)</div>
-</div>
+<div class="card"><div class="title">Distance Formula</div><div class="formula">\( \sqrt{(x_2-x_1)^2+(y_2-y_1)^2} \)</div></div>
+
+<div class="card"><div class="title">Midpoint</div><div class="formula">\( \left(\frac{x_1+x_2}{2},\frac{y_1+y_2}{2}\right) \)</div></div>
+
+<div class="card"><div class="title">Point-Slope Form</div><div class="formula">\( y-y_1=m(x-x_1) \)</div></div>
+
+<div class="card"><div class="title">Slope-Intercept</div><div class="formula">\( y=mx+b \)</div></div>
+
+<div class="card"><div class="title">Vertex Form</div><div class="formula">\( y=a(x-h)^2+k \)</div></div>
 
 </section>
 
 <!-- SEQUENCES -->
-<section id="sequences" class="hidden max-w-5xl mx-auto p-4 grid md:grid-cols-2 gap-4">
+<section id="sequences" class="hidden max-w-6xl mx-auto p-4 grid md:grid-cols-2 gap-5">
 
-<div class="math-card">
-<div class="title">Arithmetic Sequence</div>
-<div class="eq">\( a_n=a_1+(n-1)d \)</div>
-</div>
+<div class="card"><div class="title">Arithmetic Sequence</div><div class="formula">\( a_n=a_1+(n-1)d \)</div></div>
 
-<div class="math-card">
-<div class="title">Geometric Sequence</div>
-<div class="eq">\( a_n=a_1r^{n-1} \)</div>
-</div>
+<div class="card"><div class="title">Arithmetic Sum</div><div class="formula">\( S_n=\frac{n}{2}(a_1+a_n) \)</div></div>
 
-<div class="math-card">
-<div class="title">Infinite Geometric Sum</div>
-<div class="eq">\( S=\frac{a_1}{1-r} \)</div>
-</div>
+<div class="card"><div class="title">Geometric Sequence</div><div class="formula">\( a_n=a_1 r^{n-1} \)</div></div>
+
+<div class="card"><div class="title">Geometric Sum</div><div class="formula">\( S_n=\frac{a_1(1-r^n)}{1-r} \)</div></div>
+
+<div class="card"><div class="title">Infinite Geometric Sum</div><div class="formula">\( S=\frac{a_1}{1-r} \)</div></div>
 
 </section>
 
 <!-- LOGS -->
-<section id="logs" class="hidden max-w-5xl mx-auto p-4 grid md:grid-cols-2 gap-4">
+<section id="logs" class="hidden max-w-6xl mx-auto p-4 grid md:grid-cols-2 gap-5">
 
-<div class="math-card">
-<div class="title">Log Definition</div>
-<div class="eq">\( \log_b x=y \Leftrightarrow b^y=x \)</div>
-</div>
+<div class="card"><div class="title">Log Definition</div><div class="formula">\( \log_b x=y \Leftrightarrow b^y=x \)</div></div>
 
-<div class="math-card">
-<div class="title">Product Rule</div>
-<div class="eq">\( \log(ab)=\log a+\log b \)</div>
-</div>
+<div class="card"><div class="title">Product Rule</div><div class="formula">\( \log(ab)=\log a+\log b \)</div></div>
 
-<div class="math-card">
-<div class="title">Natural Log</div>
-<div class="eq">\( \ln x=\log_e x \)</div>
-</div>
+<div class="card"><div class="title">Quotient Rule</div><div class="formula">\( \log(a/b)=\log a-\log b \)</div></div>
+
+<div class="card"><div class="title">Power Rule</div><div class="formula">\( \log(a^k)=k\log a \)</div></div>
+
+<div class="card"><div class="title">Change of Base</div><div class="formula">\( \log_b a=\frac{\log a}{\log b} \)</div></div>
+
+<div class="card"><div class="title">Natural Log</div><div class="formula">\( \ln x=\log_e x \)</div></div>
 
 </section>
 
